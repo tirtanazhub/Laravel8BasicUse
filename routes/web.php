@@ -13,10 +13,12 @@ use App\Http\Controllers\EmployeeController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/*Route::get('/', function () {
+    return view('pegawai');
+}); 
+*/
 
+Route::get('/',[EmployeeController::class,'index'])->name('index');
 Route::get('/pegawai',[EmployeeController::class,'index'])->name('pegawai');
 Route::get('/pegawaisortbynama',[EmployeeController::class,'pegawaisortbynama'])->name('pegawaisortbynama');
 Route::get('/pegawaisortbyregister',[EmployeeController::class,'pegawaisortbyregister'])->name('pegawaisortbyregister');
